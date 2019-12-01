@@ -22,13 +22,12 @@ function install()
 	
 	mv /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback
 	mv /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback
-	mv /var/packages/VideoStation/target/ui/videostation2.js /var/packages/VideoStation/target/ui/videostation2.js.javback
 
 	wget --no-check-certificate https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javdb_patch.tar -O dsm_javdb_patch.tar;
 	tar -xvf dsm_javdb_patch.tar
 
-	\cp -rfa ./dsm_javdb_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-	\cp -rfa ./dsm_javdb_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
+	cp -rfa ./dsm_javdb_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
+	cp -rfa ./dsm_javdb_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
 
 	chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
 	chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/list.py
