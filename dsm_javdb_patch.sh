@@ -9,7 +9,7 @@ vVersion='local python';
 vAction=$1;
 # Logo 	******************************************************************
 CopyrightLogo="
-                DS Video JavDB Patch $vVersion                                                 
+                DS Video JavDB Patch $vVersion  QQ qun:160128165                                             
                                                                             
 ==========================================================================";
 echo "$CopyrightLogo";
@@ -57,7 +57,7 @@ function uninstall()
 	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
 	
 	
-	echo 'Congratulations, DS Video JavDB Patch uninstall completed.';
+	echo 'Congratulations, DS Video JavDB Patch uninstall completed. QQ qun:160128165';
 	echo '==========================================================================';
 }
 
@@ -66,13 +66,13 @@ if [ "$vAction" == 'install' ]; then
 	if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
 		install;
 	else
-		echo 'Sorry, you have already installed DS Video JavDB Patch.';
+		echo 'Sorry, you have already installed DS Video JavDB Patch. QQ qun:160128165';
 		echo '==========================================================================';
 		exit 1;
 	fi;
 elif [ "$vAction" == 'uninstall' ]; then
 	if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
-		echo 'Sorry, you have not installed DS Video JavDB Patch yet.';
+		echo 'Sorry, you have not installed DS Video JavDB Patch yet. QQ qun:160128165';
 		echo '==========================================================================';
 		exit 1;
 	else
