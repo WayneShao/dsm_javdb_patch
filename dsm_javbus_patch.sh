@@ -26,24 +26,24 @@ function python_model_check()
 function install()
 {
 	cd /tmp/;
-	# wget https://bootstrap.pypa.io/ez_setup.py -O - | python && easy_install pip && pip install requests && pip install bs4 && pip install lxml
+	wget https://bootstrap.pypa.io/ez_setup.py -O - | python && easy_install pip && pip install requests && pip install bs4 && pip install lxml
 
-	# mv /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback
-	# mv /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback
+	mv /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback
+	mv /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback
 
-	# wget --no-check-certificate https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javbus_patch.tar -O dsm_javbus_patch.tar;
-	# tar -xvf dsm_javbus_patch.tar
+	wget --no-check-certificate https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javbus_patch.tar -O dsm_javbus_patch.tar;
+	tar -xvf dsm_javbus_patch.tar
 
-	# cp -rfa ./dsm_javbus_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-	# cp -rfa ./dsm_javbus_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
+	cp -rfa ./dsm_javbus_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
+	cp -rfa ./dsm_javbus_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
 
-	# chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-	# chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/list.py
-	# chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/data.py
-	# chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
+	chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
+	chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/list.py
+	chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/data.py
+	chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
 
-	# chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-	# chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
+	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
+	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
 	cd -
 	rm -rf dsm_javbus_patch.sh
 	echo '==========================================================================';
