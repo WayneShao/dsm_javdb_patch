@@ -41,7 +41,7 @@ def javlist(title):
         #???????
         if list[i].select(".item-tag")[0].select(".btn-warning"):
             vmsg['caption']=1
-            title = decodetext("[??]")+title
+            title = "[??]"+title
         else:
             vmsg['caption']=0
         vmsg['title'] = title
