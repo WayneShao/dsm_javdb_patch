@@ -13,15 +13,6 @@ CopyrightLogo="
                                                                             
 ==========================================================================";
 echo "$CopyrightLogo";
-function python_model_check()
-{
-  if python -c "import $1" >/dev/null 2>&1
-  then
-      echo "1"
-  else
-      echo "0"
-  fi
-}
 # Function List	*******************************************************************************
 function install()
 {
