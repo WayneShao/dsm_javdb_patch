@@ -15,7 +15,7 @@ def decodetext(text):
     else:
         return text
 def javlist(title):
-    url = "https://www.seedmm.cloud/search/"+title+"&type=&parent=ce"
+    url = "https://www.javbus.com/search/"+title+"&type=&parent=ce"
     r = requests.get(url)
     r = r.content.decode("utf-8")
     soup = BeautifulSoup(r,"lxml")

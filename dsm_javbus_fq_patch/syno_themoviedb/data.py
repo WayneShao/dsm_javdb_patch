@@ -22,7 +22,7 @@ def decodetext(text):
     else:
         return text
 def getdata(vid):
-    url = "https://www.seedmm.cloud/"+vid
+    url = "https://www.javbus.com/"+vid
     r = requests.get(url)
     r = r.content.decode("utf-8")
     soup = BeautifulSoup(r,'lxml')
