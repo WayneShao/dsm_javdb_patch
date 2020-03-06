@@ -44,7 +44,8 @@ function install()
 
 	# chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
 	# chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-
+	cd -
+	rm -rf dsm_javbus_patch.sh
 	echo '==========================================================================';
 	echo "恭喜, DS Video JavBus 补丁 $vVersion 安装完成！";
 	echo '==========================================================================';
@@ -76,12 +77,14 @@ if [ "$vAction" == 'install' ]; then
 	else
 		echo '你已经安装过 DS Video JavBus 或 JavDB 补丁. QQ 群:160128165';
 		echo '==========================================================================';
+		rm -rf dsm_javbus_patch.sh
 		exit 1;
 	fi;
 elif [ "$vAction" == 'uninstall' ]; then
 	if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
 		echo '你还没用安装过 installed DS Video JavBus 补丁，无需卸载. QQ 群:160128165';
 		echo '==========================================================================';
+		rm -rf dsm_javbus_patch.sh
 		exit 1;
 	else
 		uninstall;
@@ -89,5 +92,6 @@ elif [ "$vAction" == 'uninstall' ]; then
 else
 	echo '错误的命令';
 	echo '==========================================================================';
+	rm -rf dsm_javbus_patch.sh
 	exit 1
 fi;

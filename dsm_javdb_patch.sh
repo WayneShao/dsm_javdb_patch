@@ -5,11 +5,11 @@ export PATH
 clear;
 
 # VAR 	******************************************************************
-vVersion='local python';
+vVersion='1.1';
 vAction=$1;
 # Logo 	******************************************************************
 CopyrightLogo="
-                DS Video JavDB Patch $vVersion  QQ qun:160128165                                             
+                DS Video JavDB 搜刮器补丁 $vVersion  QQ 群:160128165                                             
                                                                             
 ==========================================================================";
 echo "$CopyrightLogo";
@@ -36,9 +36,10 @@ function install()
 
 	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
 	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-
+	cd -
+	rm -rf dsm_javdb_patch.sh
 	echo '==========================================================================';
-	echo "Congratulations, DS Video JavDB Patch $vVersion install completed.";
+	echo "恭喜, DS Video JavDB 补丁 $vVersion 安装完成！";
 	echo '==========================================================================';
 }
 
@@ -56,8 +57,8 @@ function uninstall()
 	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
 	chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
 	
-	
-	echo 'Congratulations, DS Video JavDB Patch uninstall completed. QQ qun:160128165';
+	rm -rf dsm_javdb_patch.sh
+	echo 'DS Video JavDB Patch 卸载完成！ QQ 群:160128165';
 	echo '==========================================================================';
 }
 
@@ -66,20 +67,24 @@ if [ "$vAction" == 'install' ]; then
 	if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
 		install;
 	else
-		echo 'Sorry, you have already installed DS Video JavDB Patch. QQ qun:160128165';
+		echo '你已经安装过 DS Video JavDB 或 JavDB 补丁. QQ 群:160128165';
+		echo '如需卸载请执行： wget https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javdb_patch.sh &&sh dsm_javdb_patch.sh uninstall';
 		echo '==========================================================================';
+		rm -rf dsm_javdb_patch.sh
 		exit 1;
 	fi;
 elif [ "$vAction" == 'uninstall' ]; then
 	if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
-		echo 'Sorry, you have not installed DS Video JavDB Patch yet. QQ qun:160128165';
+		echo '你还没用安装过 installed DS Video JavDB 补丁，无需卸载. QQ 群:160128165';
 		echo '==========================================================================';
+		rm -rf dsm_javdb_patch.sh
 		exit 1;
 	else
 		uninstall;
 	fi;
 else
-	echo 'Sorry, Failed to install DS Video JavDB Patch.';
+	echo '错误的命令';
 	echo '==========================================================================';
+	rm -rf dsm_javdb_patch.sh
 	exit 1
 fi;
