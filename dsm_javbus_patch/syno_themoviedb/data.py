@@ -6,6 +6,10 @@ import requests,sys,os,time
 from bs4 import BeautifulSoup
 import json
 import urllib
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 def getvalues(item):
     values = []
     list = item.select("a")
@@ -43,6 +47,8 @@ def getdata(vid):
                 rt["directors"] =getvalues(item)
             elif title == decodetext('製作商:'):
                 rt["writers"] =getvalues(item)
+            elif title == decodetext('系列:'):
+                rt["series"] = getvalues(item)
     rt["summary"]=soup.select('h3')[0].text
     rt['backdrop'] = soup.select('.bigImage')[0].select("img")[0].get("src")
     if rt['backdrop'].find("http")==-1:

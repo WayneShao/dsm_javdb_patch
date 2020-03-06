@@ -2,7 +2,6 @@
 bin/
 bin-debug/
 bin-release/
-dsm_javdb_patch/
 # Other files and folders
 .settings/
 .DS_Store

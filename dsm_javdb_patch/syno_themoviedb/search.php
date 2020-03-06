@@ -36,21 +36,8 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 	if (isset($movie_data->belongs_to_collection)) {
 		 $data['extra'][PLUGINID]['collection_id'] = array('themoviedb' => $movie_data->belongs_to_collection->id);
 	}
-	if($list_data['caption']==1){
-		//??????
-		if (!in_array("??", $data['genre'])) {
-			array_push($data['genre'], "??");
-		}
-	}
-	// ??
-	if( isset($movie_data->series) ){
-		foreach ($movie_data->series as $item) {
-			if (!in_array($item, $data['genre'])) {
-				array_push($data['genre'], $item);
-			}
-		}
-	}
-	//??
+	
+	// genre
 	if( isset($movie_data->genres) ){
 		foreach ($movie_data->genres as $item) {
 			if (!in_array($item, $data['genre'])) {
@@ -58,8 +45,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 			}
 		}
 	}
-	
-	// ??
+	// actor
 	if( isset($movie_data->actors) ){
 		foreach ($movie_data->actors as $item) {
 			if (!in_array($item, $data['actor'])) {
@@ -68,7 +54,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		}
 	}
 	
-	// ??
+	// director
 	if( isset($movie_data->directors) ){
 		foreach ($movie_data->directors as $item) {
 			if (!in_array($item, $data['director'])) {
@@ -77,7 +63,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		}
 	}
 	
-	// ???????
+	// writer
 	if( isset($movie_data->writers) ){
 		foreach ($movie_data->writers as $item) {
 			if (!in_array($item, $data['writer'])) {
@@ -113,6 +99,7 @@ function GetMetadataJavDB($query_data, $lang)
 			continue;
 		}
 		$data = GetMovieInfoJavDB($movie_data, $data,$item);
+		
 		//Append to result
 		$result[] = $data;
 	}

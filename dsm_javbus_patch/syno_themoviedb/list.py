@@ -5,6 +5,10 @@
 import requests
 import re,sys,json,os
 from bs4 import BeautifulSoup
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 def decodetext(text):
     if sys.version_info.major == 2:
         return text.decode("utf-8")
