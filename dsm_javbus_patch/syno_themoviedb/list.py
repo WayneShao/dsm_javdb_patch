@@ -9,11 +9,6 @@ from bs4 import BeautifulSoup
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-def decodetext(text):
-    if sys.version_info.major == 2:
-        return text.decode("utf-8")
-    else:
-        return text
 def javlist(title):
     url = "https://www.seedmm.cloud/search/"+title+"&type=&parent=ce"
     r = requests.get(url)
@@ -38,10 +33,10 @@ def javlist(title):
         vmsg['id'] = id
         
         vmsg['sub_title'] = id
-        #???????
+        #检查是否存在字幕
         if list[i].select(".item-tag")[0].select(".btn-warning"):
             vmsg['caption']=1
-            title = "[??]"+title
+            title = "[字幕]"+title
         else:
             vmsg['caption']=0
         vmsg['title'] = title
