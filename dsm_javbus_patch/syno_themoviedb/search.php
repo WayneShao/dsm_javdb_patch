@@ -27,11 +27,11 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 	$data['certificate']=[
 		"USA"=>"PG-18",
 	];
-	//??
+	//封面图
 	if (isset($list_data['poster'])) {
 		 $data['extra'][PLUGINID]['poster'] = array($list_data['poster']);
 	}
-	//???
+	//背景图
 	if (isset($movie_data->backdrop)) {
 		 $data['extra'][PLUGINID]['backdrop'] = array($movie_data->backdrop);
 	}
@@ -39,23 +39,23 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		 $data['extra'][PLUGINID]['collection_id'] = array('themoviedb' => $movie_data->belongs_to_collection->id);
 	}
 	if($list_data['caption']==1){
-		//????
-		if (!in_array("??", $data['genre'])) {
-			array_push($data['genre'], "??");
+		//字幕
+		if (!in_array("字幕", $data['genre'])) {
+			array_push($data['genre'], "字幕");
 		}
 	}
 	if($list_data['type']==1){
-		//????
-		if (!in_array("??", $data['genre'])) {
-			array_push($data['genre'], "??");
+		//无码
+		if (!in_array("无码", $data['genre'])) {
+			array_push($data['genre'], "无码");
 		}
 	}else{
-		//????
-		if (!in_array("??", $data['genre'])) {
-			array_push($data['genre'], "??");
+		//有码
+		if (!in_array("有码", $data['genre'])) {
+			array_push($data['genre'], "有码");
 		}
 	}
-	// ??
+	// 系列
 	if( isset($movie_data->series) ){
 		foreach ($movie_data->series as $item) {
 			if (!in_array($item, $data['genre'])) {
@@ -63,7 +63,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 			}
 		}
 	}
-	//??
+	//类型
 	if( isset($movie_data->genres) ){
 		foreach ($movie_data->genres as $item) {
 			if (!in_array($item, $data['genre'])) {
@@ -72,7 +72,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		}
 	}
 	
-	// ??
+	// 演员
 	if( isset($movie_data->actors) ){
 		foreach ($movie_data->actors as $item) {
 			if (!in_array($item, $data['actor'])) {
@@ -81,7 +81,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		}
 	}
 	
-	// ??
+	// 导演
 	if( isset($movie_data->directors) ){
 		foreach ($movie_data->directors as $item) {
 			if (!in_array($item, $data['director'])) {
@@ -90,7 +90,7 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		}
 	}
 	
-	// ???????
+	// （作者）发行商
 	if( isset($movie_data->writers) ){
 		foreach ($movie_data->writers as $item) {
 			if (!in_array($item, $data['writer'])) {

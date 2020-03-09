@@ -33,7 +33,7 @@ def javlist(title):
         vmsg['id'] = id
         
         vmsg['sub_title'] = id
-        #???????
+        #是否含有字幕
         if list[i].select(".item-tag")[0].select(".btn-warning"):
             vmsg['caption']=1
             title = "[字幕]"+title
@@ -44,7 +44,7 @@ def javlist(title):
         vmsg['lang'] = 'jpn'
         vmsg['poster'] = poster
         data.append(vmsg)
-    #??????
+    #搜索无码资源
     url = "https://www.javbus.com/uncensored/search/"+title+"&type=&parent=ce"
     r = requests.get(url)
     r = r.content.decode("utf-8")
@@ -67,7 +67,7 @@ def javlist(title):
         vmsg['id'] = id
         
         vmsg['sub_title'] = id
-        #????????
+        #是否含有字幕
         if list[i].select(".photo-info"):
             if list[i].select(".photo-info")[0].select(".btn-warning"):
                 vmsg['caption']=1
