@@ -53,7 +53,6 @@ def javlist(title):
     json = {}
     listnum = len(list)
     json['total'] = total+listnum
-    data = []
     for i in range(len(list)):
         if i>2:
             break
