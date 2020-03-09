@@ -9,7 +9,7 @@ $SUPPORTED_PROPERTIES = array('title');
 
 
 //=========================================================
-// javdb begin
+// javbus begin
 //=========================================================
 function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 {
@@ -27,9 +27,11 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 	$data['certificate']=[
 		"USA"=>"PG-18",
 	];
+	//??
 	if (isset($list_data['poster'])) {
 		 $data['extra'][PLUGINID]['poster'] = array($list_data['poster']);
 	}
+	//???
 	if (isset($movie_data->backdrop)) {
 		 $data['extra'][PLUGINID]['backdrop'] = array($movie_data->backdrop);
 	}
@@ -37,7 +39,18 @@ function GetMovieInfoJavDB($movie_data, $data ,$list_data)
 		 $data['extra'][PLUGINID]['collection_id'] = array('themoviedb' => $movie_data->belongs_to_collection->id);
 	}
 	if($list_data['caption']==1){
-		//??????
+		//????
+		if (!in_array("??", $data['genre'])) {
+			array_push($data['genre'], "??");
+		}
+	}
+	if($list_data['type']==1){
+		//????
+		if (!in_array("??", $data['genre'])) {
+			array_push($data['genre'], "??");
+		}
+	}else{
+		//????
 		if (!in_array("??", $data['genre'])) {
 			array_push($data['genre'], "??");
 		}
