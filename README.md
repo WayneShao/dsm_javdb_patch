@@ -1,5 +1,9 @@
 > 感谢 SaNy [他的Coding主页](https://coding.net/u/sanylee/p/self/git "SaNy")，有需要豆瓣刮削器的可以前往查看
 -----
+> 感谢 jswh [他的项目](https://github.com/jswh/synology_video_station_douban_plugin)，有需要的可以前往查看
+-----
+> 感谢 atroy [他的帖子](http://www.gebi1.com/thread-261344-1-9.html?_dsign=39316681)，有需要的可以前往查看
+-----
 **QQ交流群：160128165，有什么问题可以进群寻求帮助**
 =========
 
