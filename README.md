@@ -24,7 +24,7 @@
 
 ![切换ROOT模式](https://gitee.com/challengerV/dsm_javdb_patch/raw/master/images/5.png)
 
-4.输入 wget https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javdb_patch.sh &&sh dsm_javdb_patch.sh install ，等待安装完成（如需卸载，把最后的install 换成uninstall）
+4.输入 wget https://gitee.com/siryle1213/dsm_javdb_patch/raw/master/dsm_javdb_douban_patch.sh &&sh dsm_javdb_douban_patch.sh install ，等待安装完成（如需卸载，把最后的install 换成uninstall）
 
 5.点击右上角设置-视频库-编辑文件夹，或者新建一个视频文件夹，将小姐姐文件夹的启用视频信息搜索功能打开，语言选择“日本语”（只有设置成日本语，才会走小姐姐刮削器，不要设置错了）
 
