@@ -59,11 +59,11 @@ function upgrade()
 {
     cd /tmp/;
 
-    wget --no-check-certificate https://gitee.com/challengerV/dsm_javdb_patch/raw/master/dsm_javbus_patch.tar -O dsm_javbus_patch.tar;
-    tar -xvf dsm_javbus_patch.tar
+    wget --no-check-certificate https://gitee.com/siryle1213/dsm_javdb_patch/raw/master/dsm_javbus_douban_patch.tar -O dsm_javbus_douban_patch.tar;
+    tar -xvf dsm_javbus_douban_patch.tar
 
-    cp -rfa ./dsm_javbus_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-    cp -rfa ./dsm_javbus_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
+    cp -rfa ./dsm_javbus_douban_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
+    cp -rfa ./dsm_javbus_douban_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/ui /var/packages/VideoStation/target/;
     cp -rfa ./dsm_javbus_douban_patch/syno_thetvdb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/syno_file_assets /var/packages/VideoStation/target/plugins/;
