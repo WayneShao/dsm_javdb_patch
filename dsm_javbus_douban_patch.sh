@@ -43,8 +43,7 @@ function install()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/douban.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/douban.php
+    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
@@ -79,8 +78,7 @@ function upgrade()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/douban.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/douban.php
+    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
@@ -99,8 +97,7 @@ function uninstall()
     rm /var/packages/VideoStation/target/plugins/syno_themoviedb/data.py
     rm /var/packages/VideoStation/target/plugins/syno_themoviedb/javdblist.py
     rm /var/packages/VideoStation/target/plugins/syno_themoviedb/javdbdata.py
-    rm /var/packages/VideoStation/target/plugins/syno_themoviedb/douban.php
-    rm /var/packages/VideoStation/target/plugins/syno_thetvdb/douban.php
+    rm /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
     
     mv -f /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     mv -f /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
