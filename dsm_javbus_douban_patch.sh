@@ -44,8 +44,6 @@ function install()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/doubanSearch.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/utils.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
@@ -81,8 +79,6 @@ function upgrade()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/doubanSearch.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/utils.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
@@ -102,8 +98,6 @@ function uninstall()
     rm /var/packages/VideoStation/target/plugins/syno_themoviedb/javdblist.py
     rm /var/packages/VideoStation/target/plugins/syno_themoviedb/javdbdata.py
     rm /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
-    rm /var/packages/VideoStation/target/plugins/syno_file_assets/doubanSearch.php
-    rm /var/packages/VideoStation/target/plugins/syno_file_assets/utils.php
     
     mv -f /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     mv -f /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
