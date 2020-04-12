@@ -23,7 +23,7 @@ function install()
     mv /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback
     mv /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php.javback
     mv /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php.javback
-    mv /var/packages/VideoStation/target/ui/videostation2.js /var/packages/VideoStation/target/plugins/ui/videostation2.js.javback
+    mv /var/packages/VideoStation/target/ui/videostation2.js /var/packages/VideoStation/target/ui/videostation2.js.javback
 
     wget --no-check-certificate https://gitee.com/siryle1213/dsm_javdb_patch/raw/master/dsm_javbus_douban_patch.tar -O dsm_javbus_douban_patch.tar;
     tar -xvf dsm_javbus_douban_patch.tar
@@ -103,19 +103,19 @@ function uninstall()
     mv -f /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
     mv -f /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php.javback /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     mv -f /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php.javback /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
-    mv -f /var/packages/VideoStation/target/plugins/ui/videostation2.js.javback /var/packages/VideoStation/target/plugins/ui/videostation2.js
+    mv -f /var/packages/VideoStation/target/ui/videostation2.js.javback /var/packages/VideoStation/target/ui/videostation2.js
     
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/ui/videostation2.js
+    chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/ui/videostation2.js
+    chown VideoStation:VideoStation /var/packages/VideoStation/target/ui/videostation2.js
     
     
     echo 'DS Video JavBus+JavDB+Douban+时光 搜刮器补丁 卸载完成！ QQ 群:160128165';
