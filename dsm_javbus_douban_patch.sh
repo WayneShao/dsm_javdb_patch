@@ -20,8 +20,6 @@ function install()
     wget https://bootstrap.pypa.io/ez_setup.py -O - | python && easy_install pip && pip install requests && pip install bs4 && pip install lxml
 
     mv /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback
-    mv /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback
-    mv /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php.javback
     mv /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php.javback
     mv /var/packages/VideoStation/target/ui/videostation2.js /var/packages/VideoStation/target/ui/videostation2.js.javback
 
@@ -29,7 +27,6 @@ function install()
     tar -xvf dsm_javbus_douban_patch.tar
 
     cp -rfa ./dsm_javbus_douban_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-    cp -rfa ./dsm_javbus_douban_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/ui /var/packages/VideoStation/target/;
     cp -rfa ./dsm_javbus_douban_patch/syno_thetvdb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/syno_file_assets /var/packages/VideoStation/target/plugins/;
@@ -39,15 +36,11 @@ function install()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/data.py
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/javdblist.py
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/javdbdata.py
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/ui/videostation2.js
     cd -
@@ -64,7 +57,6 @@ function upgrade()
     tar -xvf dsm_javbus_douban_patch.tar
 
     cp -rfa ./dsm_javbus_douban_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-    cp -rfa ./dsm_javbus_douban_patch/syno_synovideodb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/ui /var/packages/VideoStation/target/;
     cp -rfa ./dsm_javbus_douban_patch/syno_thetvdb /var/packages/VideoStation/target/plugins/;
     cp -rfa ./dsm_javbus_douban_patch/syno_file_assets /var/packages/VideoStation/target/plugins/;
@@ -74,15 +66,11 @@ function upgrade()
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/data.py
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/javdblist.py
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/javdbdata.py
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/ui/videostation2.js
     cd -
@@ -100,20 +88,14 @@ function uninstall()
     rm /var/packages/VideoStation/target/plugins/syno_file_assets/douban.php
     
     mv -f /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-    mv -f /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php.javback /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    mv -f /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php.javback /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     mv -f /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php.javback /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     mv -f /var/packages/VideoStation/target/ui/videostation2.js.javback /var/packages/VideoStation/target/ui/videostation2.js
     
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chmod 0755 /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chmod 0755 /var/packages/VideoStation/target/ui/videostation2.js
 
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_synovideodb/search.php
-    chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_file_assets/episode.inc.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php
     chown VideoStation:VideoStation /var/packages/VideoStation/target/ui/videostation2.js
     
