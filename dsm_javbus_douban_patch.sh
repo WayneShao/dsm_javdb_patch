@@ -9,7 +9,7 @@ vVersion='1.6';
 vAction=$1;
 # Logo  ******************************************************************
 CopyrightLogo="
-                DS Video JavBus+JavDB+Douban+时光 搜刮器补丁 $vVersion  QQ 群:160128165                                             
+                DS Video JavBus+JavDB+Douban 搜刮器补丁 $vVersion  QQ 群:160128165                                             
                                                                             
 ==========================================================================";
 echo "$CopyrightLogo";
@@ -46,7 +46,7 @@ function install()
     cd -
     rm -rf dsm_javbus_douban_patch.sh
     echo '==========================================================================';
-    echo "恭喜, DS Video JavBus+JavDB+Douban+时光 搜刮器补丁 $vVersion 安装完成！";
+    echo "恭喜, DS Video JavBus+JavDB+Douban 搜刮器补丁 $vVersion 安装完成！";
     echo '==========================================================================';
 }
 function upgrade()
@@ -76,7 +76,7 @@ function upgrade()
     cd -
     rm -rf dsm_javbus_douban_patch.sh
     echo '==========================================================================';
-    echo "恭喜, DS Video JavBus+JavDB+Douban+时光 搜刮器补丁 $vVersion 更新完成！";
+    echo "恭喜, DS Video JavBus+JavDB+Douban 搜刮器补丁 $vVersion 更新完成！";
     echo '==========================================================================';
 }
 function uninstall()
@@ -100,7 +100,7 @@ function uninstall()
     chown VideoStation:VideoStation /var/packages/VideoStation/target/ui/videostation2.js
     
     
-    echo 'DS Video JavBus+JavDB+Douban+时光 搜刮器补丁 卸载完成！ QQ 群:160128165';
+    echo 'DS Video JavBus+JavDB+Douban 搜刮器补丁 卸载完成！ QQ 群:160128165';
     echo '==========================================================================';
 }
 
@@ -109,14 +109,14 @@ if [ "$vAction" == 'install' ]; then
     if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
         install;
     else
-        echo '你已经安装过 DS Video JavBus 或 JavDB 或 JavBus+JavDB+Douban+时光 搜刮器补丁. QQ 群:160128165';
+        echo '你已经安装过 DS Video JavBus 或 JavDB 或 JavBus+JavDB+Douban 搜刮器补丁. QQ 群:160128165';
         echo '==========================================================================';
         rm -rf dsm_javbus_douban_patch.sh
         exit 1;
     fi;
 elif [ "$vAction" == 'upgrade' ]; then
     if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
-        echo '你还没安装过 DS Video JavBus+JavDB+Douban+时光 搜刮器补丁，无法更新. QQ 群:160128165';
+        echo '你还没安装过 DS Video JavBus+JavDB+Douban 搜刮器补丁，无法更新. QQ 群:160128165';
         echo '==========================================================================';
         rm -rf dsm_javbus_douban_patch.sh
         exit 1;
@@ -125,7 +125,7 @@ elif [ "$vAction" == 'upgrade' ]; then
     fi;
 elif [ "$vAction" == 'uninstall' ]; then
     if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback" ]; then
-        echo '你还没安装过 DS Video JavBus+JavDB+Douban+时光 搜刮器补丁，无需卸载. QQ 群:160128165';
+        echo '你还没安装过 DS Video JavBus+JavDB+Douban 搜刮器补丁，无需卸载. QQ 群:160128165';
         echo '==========================================================================';
         rm -rf dsm_javbus_douban_patch.sh
         exit 1;
