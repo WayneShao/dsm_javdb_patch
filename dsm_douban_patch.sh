@@ -25,10 +25,10 @@ function install()
     wget --no-check-certificate https://gitee.com/siryle1213/dsm_javdb_patch/raw/master/dsm_douban_patch.tar -O dsm_douban_patch.tar;
     tar -xvf dsm_javbus_douban_patch.tar
 
-    cp -rfa ./dsm_javbus_douban_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
-    cp -rfa ./dsm_javbus_douban_patch/ui /var/packages/VideoStation/target/;
-    cp -rfa ./dsm_javbus_douban_patch/syno_themoviedb_tv /var/packages/VideoStation/target/plugins/;
-    cp -rfa ./dsm_javbus_douban_patch/syno_file_assets /var/packages/VideoStation/target/plugins/;
+    cp -rfa ./dsm_douban_patch/syno_themoviedb /var/packages/VideoStation/target/plugins/;
+    cp -rfa ./dsm_douban_patch/ui /var/packages/VideoStation/target/;
+    cp -rfa ./dsm_douban_patch/syno_themoviedb_tv /var/packages/VideoStation/target/plugins/;
+    cp -rfa ./dsm_douban_patch/syno_file_assets /var/packages/VideoStation/target/plugins/;
 
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php
     chmod 0755 /var/packages/VideoStation/target/plugins/syno_themoviedb_tv/search.php
