@@ -17,7 +17,7 @@ echo "$CopyrightLogo";
 function install()
 {
     cd /tmp/;
-    wget https://bootstrap.pypa.io/ez_setup.py -O - | python && easy_install pip && pip install requests && pip install bs4 && pip install lxml
+    wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -O - | python && easy_install pip && pip install requests && pip install bs4 && pip install lxml
 
     mv /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php /var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.javback
     mv /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php /var/packages/VideoStation/target/plugins/syno_thetvdb/search.php.javback
