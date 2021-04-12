@@ -63,8 +63,10 @@ function uninstall()
 }
 
 # SHELL     ******************************************************************
-
-if [ "$vAction" == 'uninstall' ]; then
+if [ "$vAction" == 'install' ]; then
+    install;
+    fi;
+elif [ "$vAction" == 'uninstall' ]; then
     if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.doubanback" ]; then
         echo '你还没安装过 DS Video Douban 搜刮器补丁，无需卸载. QQ 群:160128165';
         echo '==========================================================================';
