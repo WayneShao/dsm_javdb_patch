@@ -64,7 +64,13 @@ function uninstall()
 
 # SHELL     ******************************************************************
 if [ "$vAction" == 'install' ]; then
-    install;
+    if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.doubanback" ]; then
+        install;
+    else
+        echo '你已经安装过 DS Video JavBus 或 JavDB 或 JavBus+JavDB+Douban 搜刮器补丁. QQ 群:160128165';
+        echo '==========================================================================';
+        rm -rf dsm_douban_patch.sh
+        exit 1;
     fi;
 elif [ "$vAction" == 'uninstall' ]; then
     if [ ! -f "/var/packages/VideoStation/target/plugins/syno_themoviedb/search.php.doubanback" ]; then
