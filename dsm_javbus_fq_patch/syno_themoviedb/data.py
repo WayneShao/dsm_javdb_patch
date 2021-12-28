@@ -2,7 +2,7 @@
 #-*- coding:utf8 -*-
 # By sanyle 2018-05-03
 
-import requests,sys,os,time
+import requests,sys,os,time, re
 from bs4 import BeautifulSoup
 import json
 import urllib
@@ -22,6 +22,12 @@ def decodetext(text):
     else:
         return text
 def getdata(vid):
+    if vid.find("-")==-1:
+        match = re.findall(r"[\d]+|[a-zA-Z]+",vid)
+        vid = "-".join(match)
+        if(vid.endswith("-c")):
+            vid = vid.replace("-C","C")    
+    
     url = "https://www.javbus.com/"+vid
     r = requests.get(url)
     r = r.content.decode("utf-8")
@@ -52,7 +58,8 @@ def getdata(vid):
     rt["summary"]=soup.select('h3')[0].text
     rt['backdrop'] = soup.select('.bigImage')[0].select("img")[0].get("src")
     if rt['backdrop'].find("http")==-1:
-            rt['backdrop']="https:"+rt['backdrop']
+        if rt['backdrop'].find("https")==-1:
+            rt['backdrop']="https://www.javbus.com"+rt['backdrop']
 
     data = json.dumps(rt, ensure_ascii=False)
     return data

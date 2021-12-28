@@ -9,7 +9,13 @@ from bs4 import BeautifulSoup
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-def javlist(title):
+def javlist(title):    
+    if title.find("-")==-1:
+        match = re.findall(r"[\d]+|[a-zA-Z]+",title)
+        title = "-".join(match)
+        if(title.endswith("-c")):
+            title = title.replace("-C","C")
+    
     url = "https://www.javbus.com/search/"+title+"&type=&parent=ce"
     r = requests.get(url)
     r = r.content.decode("utf-8")
@@ -30,13 +36,18 @@ def javlist(title):
         poster = list[i].select(".photo-frame > img")[0].get("src")
         # if poster.find("http")==-1:
         #     poster="https:"+poster
+        
+        if poster.find("http")==-1:
+            if poster.find("https")==-1:
+                poster="https://www.javbus.com"+poster
+        
         vmsg['id'] = id
         
         vmsg['sub_title'] = id
         #是否含有字幕
         if list[i].select(".item-tag")[0].select(".btn-warning"):
             vmsg['caption']=1
-            title = "[字幕]"+title
+            #title = "[字幕]"+title
         else:
             vmsg['caption']=0
         vmsg['title'] = title
@@ -62,8 +73,9 @@ def javlist(title):
         vmsg['summary'] = title
         title = id + " "+ title
         poster = list[i].select(".photo-frame > img")[0].get("src")
-        # if poster.find("http")==-1:
-        #     poster="https:"+poster
+        if poster.find("http")==-1:
+            if poster.find("https")==-1:
+                poster="https://www.javbus.com"+poster
         vmsg['id'] = id
         
         vmsg['sub_title'] = id
