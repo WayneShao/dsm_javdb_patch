@@ -13,9 +13,11 @@ def javlist(title):
     if title.find("-")==-1:
         match = re.findall(r"[\d]+|[a-zA-Z]+",title)
         title = "-".join(match)
-        if(title.endswith("-c")):
+        if(title.endswith("-C")):
             title = title.replace("-C","C")
-    
+        if(title.endswith("-c")):
+            title = title.replace("-c","C")
+    print title
     url = "https://www.javbus.com/search/"+title+"&type=&parent=ce"
     r = requests.get(url)
     r = r.content.decode("utf-8")

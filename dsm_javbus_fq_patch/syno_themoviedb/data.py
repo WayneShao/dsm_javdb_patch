@@ -25,9 +25,11 @@ def getdata(vid):
     if vid.find("-")==-1:
         match = re.findall(r"[\d]+|[a-zA-Z]+",vid)
         vid = "-".join(match)
-        if(vid.endswith("-c")):
+        if(vid.endswith("-C")):
             vid = vid.replace("-C","C")    
-    
+        if(vid.endswith("-c")):
+            vid = vid.replace("-c","C")    
+    print(vid)
     url = "https://www.javbus.com/"+vid
     r = requests.get(url)
     r = r.content.decode("utf-8")
